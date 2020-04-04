@@ -27,7 +27,7 @@ def julius_function():
 				my_openJTalk.openjtalk_function(reply) # replyに代入された文字列をopenJTalkに送る
 				data =""
 			else:
-				data += str(client.recv(1024).decode('utf-8')) # utf-8だとエラーになったので、shift-jisで回避
+				data += str(client.recv(1024).decode('utf-8'))
 
 	except KeyboardInterrupt:
 	    print('finished')
