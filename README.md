@@ -1,4 +1,4 @@
-# Speech-Dialogue-on-Singularity
+# Chat-on-Singularity
 
 ## 説明(description)
 Singularity上で動く音声対話システム環境を構築<br>
