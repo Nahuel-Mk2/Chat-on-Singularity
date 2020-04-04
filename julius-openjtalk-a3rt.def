@@ -1,0 +1,28 @@
+#ここでベース環境指定
+#dockerはdockerhubからベースとなるimageを指定
+Bootstrap: docker
+    From: nahuelhub/julius-openjtalk:latest
+#環境変数設定
+%environment
+    export LC_ALL=C
+    export PYTHONIOENCODING=utf-8
+#インストールするものを記述
+%post
+    #ln -s /usr/share/zoneinfo/Asia/Tokyo /etc/localtime
+    #apt
+    apt -y update
+    apt -y full-upgrade
+    apt install -y python3
+    apt install -y python3-pip
+    apt install -y osspd-alsa
+    apt install -y alsa-utils
+    apt install -y pciutils
+    apt install -y usbutils
+
+    #pip
+    pip3 install pya3rt
+
+%labels
+    Author Nahuel
+    Version v1.0.0
+    Date April 4th, 2020
